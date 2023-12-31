@@ -2,6 +2,12 @@ import streamlit as st
 import pickle 
 import requests
 import os
+# st.set_page_config(
+#     page_title="Movie recommender",
+#     layout="wide",
+#     initial_sidebar_state="expanded",
+#     bg_color="#AEDFE7"  # Set your desired background color using a hex code
+# )
 
 def fetch_poster(movie_id):
     url = "https://api.themoviedb.org/3/movie/{}?api_key=c0276ba29a6cf75accee65eec3844f9b".format(movie_id)
@@ -10,7 +16,6 @@ def fetch_poster(movie_id):
     poster_path = data['poster_path']
     full_path = "https://image.tmdb.org/t/p/w500/" + poster_path
     return full_path
-
 
 def recommended(selected_movie):
     index = movies[movies['title'] == selected_movie].index[0]
@@ -26,6 +31,7 @@ def recommended(selected_movie):
 
 
 st.header("Movie Recommender")
+
 
 movies = pickle.load(open('artifacts/movie_list.pkl','rb'))
 similarity = pickle.load(open('artifacts/similarity.pkl','rb'))

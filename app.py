@@ -2,12 +2,6 @@ import streamlit as st
 import pickle 
 import requests
 import os
-# st.set_page_config(
-#     page_title="Movie recommender",
-#     layout="wide",
-#     initial_sidebar_state="expanded",
-#     bg_color="#AEDFE7"  # Set your desired background color using a hex code
-# )
 
 def fetch_poster(movie_id):
     url = "https://api.themoviedb.org/3/movie/{}?api_key=c0276ba29a6cf75accee65eec3844f9b".format(movie_id)

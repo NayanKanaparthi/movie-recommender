@@ -138,5 +138,5 @@ dmypy.json
 configs/secrets.yaml
 
 # add your env folder here if its there
-artifacts/similarity.pkl
+#artifacts/similarity.pkl
 
